@@ -91,7 +91,7 @@ GPL v2 - Because sharing is caring!
 
 ⭐ Star History
 
-https://api.star-history.com/svg?repos=yourusername/orang-gpu&type=Date
+https://api.star-history.com/svg?repos=naderseify/orang-gpu&type=Date
 
 🙏 Acknowledgments
 
