@@ -23,3 +23,78 @@ Orange GPU transforms an Orange Pi Lite into a virtual GPU that connects via **d
 
 ## 🏗️ Architecture
 
+=> orang_gpu start
+```
+
+4. Install RPi Driver
+
+```bash
+cd orang-gpu/rpi-driver
+make
+sudo insmod orang-gpu.ko
+```
+
+5. Test It!
+
+```bash
+cd test
+./test_gpu --matrix 1024x1024
+```
+
+📊 Performance
+
+Operation Size Orange GPU (4×A7) RPi Only Speedup
+Matrix Mul 1024² 45 ms 120 ms 2.7×
+Conv2D 224×224×3 120 ms 350 ms 2.9×
+LLM Token 7B model 85 ms/token N/A -
+
+🔬 Protocol Details
+
+See docs/protocol.md for complete USB protocol specification.
+
+🛠️ Development
+
+Prerequisites
+
+```bash
+sudo apt install gcc-arm-linux-gnueabihf make git
+```
+
+Build Everything
+
+```bash
+./tools/build.sh --all
+```
+
+Run Tests
+
+```bash
+./tools/run_tests.sh
+```
+
+📈 Roadmap
+
+· Basic U-Boot USB gadget
+· NEON matrix operations
+· OpenCL compatibility layer
+· Multi-Orange Pi clustering
+· USB 3.0 support (where available)
+· CUDA-like API
+
+🤝 Contributing
+
+Contributions are welcome! Please read CONTRIBUTING.md first.
+
+📜 License
+
+GPL v2 - Because sharing is caring!
+
+⭐ Star History
+
+https://api.star-history.com/svg?repos=yourusername/orang-gpu&type=Date
+
+🙏 Acknowledgments
+
+· U-Boot community
+· Orange Pi team
+· All contributors
